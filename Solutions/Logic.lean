@@ -9,11 +9,14 @@ variable (P Q R : Prop)
 
 theorem doubleneg_intro :
     P → ¬ ¬ P  := by
-  sorry
+    intro h
+    intro i
+    contradiction
 
 theorem doubleneg_elim :
     ¬ ¬ P → P  := by
-  sorry
+    intro a
+    sorry
 
 theorem doubleneg_law :
     ¬ ¬ P ↔ P  := by
@@ -26,10 +29,12 @@ theorem doubleneg_law :
 
 theorem disj_comm :
     (P ∨ Q) → (Q ∨ P)  := by
+  intro h
   sorry
 
 theorem conj_comm :
     (P ∧ Q) → (Q ∧ P)  := by
+  intro h
   sorry
 
 

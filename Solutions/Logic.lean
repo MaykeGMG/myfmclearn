@@ -15,8 +15,9 @@ theorem doubleneg_intro :
 
 theorem doubleneg_elim :
     ¬ ¬ P → P  := by
-    intro a
+    intro h
     sorry
+
 
 theorem doubleneg_law :
     ¬ ¬ P ↔ P  := by
@@ -30,11 +31,12 @@ theorem doubleneg_law :
 theorem disj_comm :
     (P ∨ Q) → (Q ∨ P)  := by
   intro h
-  cases h with
-  | inl hp =>
-    exact Or.inr hp
-  | inr hq =>
-    exact Or.inl hq
+  rcases h with (hp | hq)
+  . right
+    exact hp
+  . left
+    exact hq
+
 
 theorem conj_comm :
     (P ∧ Q) → (Q ∧ P)  := by

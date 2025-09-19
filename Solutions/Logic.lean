@@ -30,7 +30,11 @@ theorem doubleneg_law :
 theorem disj_comm :
     (P ∨ Q) → (Q ∨ P)  := by
   intro h
-  sorry
+  cases h with
+  | inl hp =>
+    exact Or.inr hp
+  | inr hq =>
+    exact Or.inl hq
 
 theorem conj_comm :
     (P ∧ Q) → (Q ∧ P)  := by
